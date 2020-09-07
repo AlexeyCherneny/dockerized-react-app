@@ -12,6 +12,7 @@
   },
   "scripts": {
     "start-dev": "docker run -it --rm -v ${PWD}/src:/var/www/frontend/src -p 3000:3000 -e CHOKIDAR_USEPOLLING=true dockerizedapp:dev",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
