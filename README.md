@@ -1,5 +1,21 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Start with docker dev
+    docker build -t dockerizedapp:dev .
+
+    docker run \
+        -it \
+        --rm \
+        -v ${PWD}/src:/var/www/frontend/src \
+        -p 3000:3000 \
+        -e CHOKIDAR_USEPOLLING=true \
+        dockerizedapp:dev
+
+## Start with docker prod
+    docker build -f Dockerfile.prod -t sample:prod .
+
+    docker run -it --rm -p 1337:80 dockerizedapp:prod
+
 ## Available Scripts
 
 In the project directory, you can run:
