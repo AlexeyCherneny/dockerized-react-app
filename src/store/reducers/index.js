@@ -1,7 +1,8 @@
-import { createReducer } from "redux-act";
+import { connectRouter } from "connected-react-router";
+import { combineReducers } from "redux";
 
-const initialState = {};
+import history from "../../services/history";
 
-const dumpReducer = createReducer({}, initialState);
+const rootReducer = combineReducers({ router: connectRouter(history) });
 
-export default dumpReducer;
+export default rootReducer;
